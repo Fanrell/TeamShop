@@ -2,7 +2,58 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section id="second-nav">
+    <ul>
+        <li><a asp-area="" asp-controller="Home" asp-action="Catalog" onclick="">Karmy suche</a></li>
+        <li><a asp-area="" asp-controller="Home" asp-action="Catalog" onclick="">Karmy mokre</a></li>
+        <li><a asp-area="" asp-controller="Home" asp-action="Catalog" onclick="">Żwirki</a></li>
+        <li><a asp-area="" asp-controller="Home" asp-action="Catalog" onclick="">Kuwety</a></li>
+        <li><a asp-area="" asp-controller="Home" asp-action="Catalog" onclick="">Drapaki</a></li>
+        <li><a asp-area="" asp-controller="Home" asp-action="Catalog" onclick="">Zabawki</a></li>
+        <li><a asp-area="" asp-controller="Home" asp-action="Catalog" onclick="">Akcesoria</a></li>
+    </ul>
+</section>
+
+<section id="products">
+    <a asp-area="" asp-controller="Home" asp-action="Catalog">
+        <div class="product">
+            <div class="img"></div>
+            <h3>NAZWA</h3>
+            <p>10 PLN</p>
+        </div>
+    </a>
+    <a asp-area="" asp-controller="Home" asp-action="Catalog">
+        <div class="product">
+            <div class="img"></div>
+            <h3>NAZWA</h3>
+            <p>10 PLN</p>
+        </div>
+    </a>
+    <a asp-area="" asp-controller="Home" asp-action="Catalog">
+        <div class="product">
+            <div class="img"></div>
+            <h3>NAZWA</h3>
+            <p>10 PLN</p>
+        </div>
+    </a>
+    <a asp-area="" asp-controller="Home" asp-action="Catalog">
+        <div class="product">
+            <div class="img"></div>
+            <h3>NAZWA</h3>
+            <p>10 PLN</p>
+        </div>
+    </a>
+    <a asp-area="" asp-controller="Home" asp-action="Catalog">
+        <div class="product">
+            <div class="img"></div>
+            <h3>NAZWA</h3>
+            <p>10 PLN</p>
+        </div>
+    </a>
+</section>
+<section id="cookie-warn">
+    <div>
+        <p>Ta strona korzysta z ciasteczek aby świadczyć usugi na najwyższym poziomie. Dalsze korzystanie ze strony oznacza, że zgadzasz się na ich użycie.</p>
+        <a href="javascript:void(0);" id="close-cookie-warn"><i class="icon-cancel"></i></a>
+    </div>
+</section>

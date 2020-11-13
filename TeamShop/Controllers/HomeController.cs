@@ -23,7 +23,12 @@ namespace TeamShop.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Bracket()
+        {
+            return View();
+        }
+
+        public IActionResult Catalog()
         {
             return View();
         }

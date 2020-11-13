@@ -1,0 +1,272 @@
+body {
+  margin:0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+/*    font-family: 'Source Sans Pro', sans-serif;*/
+  font-size: 15px;
+  font-style: normal; 
+  font-variant: normal;
+    width: 100%;
+    background: #d0d0d0;
+    color: #000000;
+}
+#header {
+	text-align: center;
+/*
+    background-image: url('https://api.time.com/wp-content/uploads/2015/02/cats.jpg?quality=85&w=1024&h=512&crop=1');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+*/
+}
+#header h1 {
+	font-size: 60px;
+    margin: 0;
+}
+#navigation .toggle, .drop{
+  display:none;
+}
+
+#navigation {
+display: block;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+/*  position: fixed;*/
+/*  z-index: 1;*/
+/*  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.83);*/
+/*  top:0;*/
+  
+} 
+
+#navigation.scrolled2 {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+/*
+    background: #fff;
+    color: #000;
+*/
+}
+
+
+#navigation  a{
+  font-size: 16px;
+/*    font-weight: 600;*/
+/*  margin: 0;*/
+/*  display: inline;*/
+  text-decoration:none;
+  color:#fff;
+/*  padding-left: 5%;*/
+/*  padding-right:2%; */
+  
+  
+}
+#navigation .basket {
+	background: #900;
+    padding: 5px;
+    border-radius: 8px;
+}
+#navigation ul {
+  display: block;
+  padding: 0;
+    margin: 0;
+    text-align: center;
+}
+#navigation ul li {
+  list-style: none;
+  display: inline-block; 
+    padding: 15px;
+  
+}
+
+#navigation li:hover{
+  background-color:rgb(0, 75, 177);
+}
+#navigation .basket:hover {
+	background: #f53c3c;
+   
+}
+#banner {
+/*    display: none;*/
+	width: 100%;
+/*    height: 10vh;*/
+    text-align: center;
+    margin: 1% 0;
+}
+#banner div {
+    margin-left: 20%;
+    width: 60%;
+    height: 20vh;
+/*    background-image: url('https://images.glaciermedia.ca/polopoly_fs/1.1180667.1403886516!/fileImage/httpImage/image.jpg_gen/derivatives/landscape_804/gw201010310229991ar-jpg.jpg');*/
+/*
+    background-size: cover;
+	background-position: center;
+*/
+    background: #4d4d4d;
+    position: relative;
+    
+}
+#banner h2 {
+	position: absolute;
+    right: 2%;
+    top: 30%;
+    font-size: 50px;
+    margin: 0;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.47);
+    padding: 5px;
+}
+#second-nav {
+    width: 20%;
+    display: inline-block;
+/*    margin-top: 0.005%;*/
+}
+#second-nav ul {
+    width:70%;
+/*    margin-left: 2%;*/
+    list-style: none;
+}
+#second-nav ul li {
+    
+    margin-top: 7px;
+/*    text-decoration: none;*/
+}
+#second-nav ul li a {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+    text-decoration: none;
+    color: #000;
+}
+#second-nav ul li a:hover {
+    text-decoration: underline;
+    color: #900;
+}
+#products {
+	width: 58%;
+    background: #fff;
+    display: inline-block;
+    float: right;
+    padding: 3% 1%;
+    margin: 1% 20% 5% 0;
+}
+#products .product {
+/*    float: ce;*/
+    width: 26.6%;
+    height: 45vh;
+    overflow: hidden;
+    text-align: center;
+    display: inline-block;
+    margin: 1% 3%;
+    border: solid 1px;
+    color: #000;
+/*    position: relative;*/
+}
+#products .product .img {
+	 width: 100%;
+    height:65%;
+    background-image: url('https://images.glaciermedia.ca/polopoly_fs/1.1180667.1403886516!/fileImage/httpImage/image.jpg_gen/derivatives/landscape_804/gw201010310229991ar-jpg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#see-product {
+    background: #fff;
+    width: 80%;
+    margin: 2% 10%;
+    padding: 1%;
+    
+}
+#see-product .come-back {
+    display: block;
+    width: 10%;
+    margin-right: 90%;
+    color: #000;
+    font-weight: bolder;
+    background: #d0d0d0;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    
+    
+}
+#see-product .see-img {
+    width: 40%;
+    height: 50vh;
+	
+    display: inline-block;
+    margin: 2%;
+    overflow: hidden;
+    
+}
+#see-product .see-img .img {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.glaciermedia.ca/polopoly_fs/1.1180667.1403886516!/fileImage/httpImage/image.jpg_gen/derivatives/landscape_804/gw201010310229991ar-jpg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#see-product .see-img .img:hover{
+    transform: scale(1.2);
+}
+
+#see-product .div2 {
+	width: 50%;
+    display: inline-block;
+    float: right;
+}
+#see-product .div2 input {
+    display: block;
+}
+#see-product .div2 button{
+background: #900;
+    border: none;
+    border-radius: none;
+    color: #fff;
+    padding: 10px;
+    display: block;
+    margin-top: 10px;
+    
+}
+#see-product .div2 button:hover{
+    background:#f53c3c ;
+}
+#cookie-warn {
+	background: rgba(0, 0, 0, 0.77);
+    position: fixed;
+    z-index: 88;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    display: none;
+    
+}
+#cookie-warn div {
+	width: 50%;
+    padding: 2%;
+    background: #fff;
+    border-radius: 8px;
+    position: fixed;
+    top: 40%;
+    left: 23%;
+    z-index: 99;
+    
+}
+#cookie-warn a {
+    color: #000;
+    font-weight: 600;
+    float: right
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    background:#000;
+    color:#fff;
+    text-align: center;
+    width: 100%;
+}
+footer p {
+    margin: 5px;
+}
