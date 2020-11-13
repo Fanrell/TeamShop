@@ -233,6 +233,91 @@ background: #900;
 #see-product .div2 button:hover{
     background:#f53c3c ;
 }
+#table {
+	width: 80%;
+    background: #fff;
+    margin: 3% 10%;
+    padding: 1%;
+}
+
+#table .list{
+    display: inline-block;
+    width: 60%;
+    padding: 2%;
+}
+#table div {
+    display: inline-block;
+    width: 35%;
+    padding: 2%;
+    border-left: solid 2px;
+    float: right;
+}
+#table table {
+    text-align: left;
+    width: 80%;
+}
+#table table th,
+#table table td {
+    width: 32%;
+}
+#table .list tr th{
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    background: #d0d0d0;
+}
+#table .list tr:hover{
+    background: #d0d0d0;
+}
+
+#table div button{
+background: #900;
+    border: none;
+    border-radius: none;
+    color: #fff;
+    padding: 10px;
+    display: block;
+    margin-top: 10px;
+    
+}
+#table div button:hover{
+    background:#f53c3c ;
+}
+#form {
+	width: 80%;
+    margin: 3% 10%;
+    background: #fff;
+    padding: 1%;
+}
+#form .data input {
+    display: block;
+    width: 70%;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+#form .data,
+#form .accept{
+    display: inline-block;
+    width: 49%;
+}
+#form .accept{
+    width: 43%;
+    float: right;
+    border-left: solid;
+    padding: 3%;
+}
+#form .accept textarea {
+	width: 70%;
+    display: block;
+}
+#form .accept #submit {
+    width: 70%;
+    background: #000;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    margin-top: 15px;
+}
+
 #cookie-warn {
 	background: rgba(0, 0, 0, 0.77);
     position: fixed;

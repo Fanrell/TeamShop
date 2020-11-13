@@ -360,6 +360,6 @@ D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\TeamShop.Views.p
 D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\TeamShop.dll
 D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\TeamShop.pdb
 D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\TeamShop.genruntimeconfig.cache
-D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Bracket.cshtml.g.cs
 D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Catalog.cshtml.g.cs
 D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Account.cshtml.g.cs
+D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Basket.cshtml.g.cs

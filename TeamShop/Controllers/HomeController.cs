@@ -23,7 +23,7 @@ namespace TeamShop.Controllers
             return View();
         }
 
-        public IActionResult Bracket()
+        public IActionResult Basket()
         {
             return View();
         }
