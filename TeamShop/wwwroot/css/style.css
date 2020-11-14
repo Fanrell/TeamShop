@@ -317,7 +317,48 @@ background: #900;
     border: none;
     margin-top: 15px;
 }
-
+#contact {
+	width: 70%;
+    margin: 3% 15%;
+    
+}
+#contact .right {
+    display: inline-block;
+    width: 43%;
+    float: right;
+/*    margin: 3%;*/
+    border-left: solid;
+    padding: 3%;
+}
+#contact .right input,
+#contact .right textarea{
+    width: 80%;
+    display: block;
+    padding: 5px;
+    border: none;
+}
+#contact .right #preferowany {
+	display: inline;
+    width: auto;
+}
+#contact  .left {
+    display: inline-block;
+    width: 44%;
+    margin: 3%;
+    text-align: center;
+    
+}
+#contact  .left a {
+    color: #000;
+    text-decoration: none;
+}
+#contact .right #submit {
+    background: #000;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    margin-top: 15px;
+}
 #cookie-warn {
 	background: rgba(0, 0, 0, 0.77);
     position: fixed;

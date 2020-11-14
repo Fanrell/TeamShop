@@ -1,0 +1,40 @@
+body {
+  margin:0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+/*    font-family: 'Source Sans Pro', sans-serif;*/
+/*
+  font-size: 15px;
+  font-style: normal; 
+  font-variant: normal;
+*/
+    width: 100%;
+   
+}
+#sign-in {
+	width: 30%;
+    margin: 0 30%;
+    padding: 3%;
+    background: #262626;
+    color: #fff;
+}
+#sign-in form input {
+	display: block;
+    width: 80%;
+    background: #dedede;
+    border: none;
+    padding: 10px;
+}
+#sign-in form input[type=button]{
+    width: 20%;
+    display: inline-block;
+/*    float: right;*/
+    margin: 20px 20px 0 0;
+}
+#sign-in form .sign {
+	background: #006cff;
+    color: #fff;
+}
+#sign-in form .sign:hover {
+    background: #2a84ff;
+}

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>@ViewData["Title"] - Sklep</title>
     <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/sign-in-style.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/panel-admin-style.css" rel="stylesheet" type="text/css" />
     <link href="~/css/fontello-b4e01c75/css/fontello.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -25,7 +27,7 @@
             <li> <a  asp-area="" asp-controller="Home" asp-action="Index">KOTY</a></li>
             <li> <a asp-area="" asp-controller="Home" asp-action="Index">PSY</a></li>
             <li> <a asp-area="" asp-controller="Home" asp-action="Catalog">INNE</a></li>
-            <li> <a asp-area="" asp-controller="Home" asp-action="Catalog">KONTAKT</a></li>
+            <li> <a asp-area="" asp-controller="Home" asp-action="Contact">KONTAKT</a></li>
             <li> <a asp-area="" asp-controller="Home" asp-action="Account">KONTO</a></li>
             <li><a class="basket" asp-area="" asp-controller="Home" asp-action="Basket">KOSZYK <i class="icon-shopping-basket"></i></a></li>
         </ul>
@@ -45,7 +47,7 @@
         <p>SKLEP&copy; 2020</p>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="scripts/script.js"></script>
+    <script src="~/js/script.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

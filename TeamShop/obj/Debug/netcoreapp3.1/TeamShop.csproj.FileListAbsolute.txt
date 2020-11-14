@@ -363,3 +363,6 @@ D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\TeamShop.genrunt
 D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Catalog.cshtml.g.cs
 D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Account.cshtml.g.cs
 D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Basket.cshtml.g.cs
+D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
+D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Login.cshtml.g.cs
+D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Panel.cshtml.g.cs

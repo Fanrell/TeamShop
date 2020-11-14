@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+<section id="contact">
+    <div class="left">
+
+        <h2 class=""><i class="icon-paw"></i>SKLEP</h2>
+
+        <p><i class="icon-location"></i>ul. Ulicowa 0<br>00-000 Miasto </p>
+        <a href="tel:48-000-000-000" style="display: block;"><i class="icon-phone"></i>tel.+48 000 000 000</a> <a href="mailto:"><i class=" icon-mail-alt"></i>e-mail: <span>adress@mail.com</span></a>
+        <p class="nip">NIP: 000000000</p>
+        <p class="nip">REGON: 000000000</p>
+        <p class="nip">KRS: 000000000</p>
+
+    </div>
+    <div class="right">
+        <form action="" method="post">
+            <label for="email">Imię i nazwisko:</label>
+            <input type="text" name="name" id="name" placeholder="Imie Nazwisko" pattern=".{2,}" required title="Wypełnij to pole.">
+            <label for="email">Email:</label><br> <input type="email" name="email" id="email" placeholder="email@address.com" required title="Wypełnij to pole.">
+            <label for="email">Numer telefonu:</label>
+            <input type="tel" name="phone" id="phone" placeholder="000-000-000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required><small>Format: 123-456-789</small>
+            <textarea name="message" id="message" cols="30" rows="5" placeholder="Treść wiadomości: " pattern=".{8,}" required title="Wypełnij to pole."></textarea>
+            <label for="preferowany">Preferowany kontakt: </label>
+
+            <input type="radio" id="preferowany" name="preferowany" value="TELEFONICZNY" class="radio" checked>
+            Telefoniczny
+            <input type="radio" id="preferowany" name="preferowany" value="MAILOWY" class="radio">Mailowy
+            <input type="submit" id="submit" name="submit" value="WYŚLIJ">
+        </form>
+    </div>
+</section>
