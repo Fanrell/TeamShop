@@ -303,8 +303,6 @@ D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\Razor\Views\Home
 D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Account.cshtml.g.cs
 D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Basket.cshtml.g.cs
 D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
-D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Login.cshtml.g.cs
-D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Panel.cshtml.g.cs
 D:\Projekty git\TeamShop\TeamShop\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\Projekty git\TeamShop\TeamShop\bin\Debug\netcoreapp3.1\appsettings.json
 D:\Projekty git\TeamShop\TeamShop\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -746,3 +744,5 @@ D:\#Projekty\#Project\TeamShop\TeamShop\bin\Debug\netcoreapp3.1\System.Xml.XPath
 D:\#Projekty\#Project\TeamShop\TeamShop\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\TeamShop.GeneratedMSBuildEditorConfig.editorconfig
 D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\scopedcss\bundle\TeamShop.styles.css
+D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
+D:\#Projekty\#Project\TeamShop\TeamShop\obj\Debug\netcoreapp3.1\Razor\Views\Secured\Index.cshtml.g.cs
