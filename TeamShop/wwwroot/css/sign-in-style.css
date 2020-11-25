@@ -25,13 +25,6 @@ body {
     border: none;
     padding: 10px;
 }
-    #sign-in form input[type=password] {
-        display: block;
-        width: 80%;
-        background: #dedede;
-        border: none;
-        padding: 10px;
-    }
 #sign-in form input[type=button]{
     width: 20%;
     display: inline-block;
@@ -48,6 +41,6 @@ body {
         background: #006cff;
         color: #fff;
     }
-#sign-in form .sign:hover {
-    background: #ff0000;
-}
+        #sign-in form .sign:hover {
+            background: #4392fd;
+        }
