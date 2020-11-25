@@ -12,10 +12,10 @@ body {
    
 }
 #sign-in {
-	width: 30%;
+    width: 30%;
     margin: 0 30%;
     padding: 3%;
-    background: #262626;
+    background: #595959;
     color: #fff;
 }
 #sign-in form input {
@@ -25,16 +25,29 @@ body {
     border: none;
     padding: 10px;
 }
+    #sign-in form input[type=password] {
+        display: block;
+        width: 80%;
+        background: #dedede;
+        border: none;
+        padding: 10px;
+    }
 #sign-in form input[type=button]{
     width: 20%;
     display: inline-block;
-/*    float: right;*/
     margin: 20px 20px 0 0;
 }
-#sign-in form .sign {
-	background: #006cff;
-    color: #fff;
-}
+
+    #sign-in form input[type=submit] {
+        width: 20%;
+        display: inline-block;
+        margin: 20px 20px 0 0;
+    }
+
+    #sign-in form .sign {
+        background: #006cff;
+        color: #fff;
+    }
 #sign-in form .sign:hover {
-    background: #2a84ff;
+    background: #ff0000;
 }
