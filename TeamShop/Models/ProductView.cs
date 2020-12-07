@@ -4,10 +4,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TeamShop.Models
 {
-    public class Product
+    public class ProductView
     {
-        [Key]
-        public int Id { get; set; }
         [Required]
         public string Title { get; set; }
         [Required]
@@ -21,6 +19,6 @@ namespace TeamShop.Models
         [Required]
         public string Description { get; set; }
         [Required]
-        public string PictureName { get; set; }
+        public IFormFile Attach1 { get; set; }
     }
 }

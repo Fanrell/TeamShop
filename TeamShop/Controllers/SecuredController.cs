@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TeamShop.Data;
@@ -15,11 +16,13 @@ namespace TeamShop.Controllers
     public class SecuredController : Controller
     {
         private readonly ApplicationDbContext _db;
+        private readonly IWebHostEnvironment webHostEnvironment;
         public Product product { get; set; }
 
-        public SecuredController(ApplicationDbContext db)
+        public SecuredController(ApplicationDbContext db, IWebHostEnvironment hostEnvironment)
         {
             _db = db;
+            webHostEnvironment = hostEnvironment;
         }
 
         public IActionResult Index()
@@ -28,19 +31,36 @@ namespace TeamShop.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(string title, float price, int quantity, string tags, string types, string description, IFormFile attach1)
+        public async Task<IActionResult> Index(ProductView model)
         {
-            product = new Product();
-            product.Title = title;
-            product.Price = price;
-            product.Quantity = quantity;
-            product.Tags = tags;
-            product.Types = types;
-            product.Description = description;
-            attach1.CopyTo(product.Attach1);
-            _db.Products.Add(product);
-            _db.SaveChanges();
+                string uniqueFileName = UploadedFile(model);
+                Product newProduct = new Product
+                {
+                    Title = model.Title,
+                    Price = model.Price,
+                    Quantity = model.Quantity,
+                    Tags = model.Tags,
+                    Types = model.Types,
+                    Description = model.Description,
+                    PictureName = uniqueFileName,
+                };
+            _db.Add(newProduct);
+            await _db.SaveChangesAsync();
             return View();
+        }
+        private string UploadedFile(ProductView model)
+        {
+            string uniqueFileName = null;
+
+                string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "img");
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Attach1.FileName;
+                string filePath = Path.Combine(Path.Combine(uploadsFolder, uniqueFileName));
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    model.Attach1.CopyTo(fileStream);
+                }
+
+            return uniqueFileName;
         }
     }
 

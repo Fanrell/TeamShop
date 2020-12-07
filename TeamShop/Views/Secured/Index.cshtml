@@ -1,10 +1,12 @@
-﻿@{
+﻿@model TeamShop.Models.ProductView
+
+@{
     ViewData["Title"] = "Admin Panel";
 }
 
 <section id="sign-in" style="color:black;">
 
-    <form action="" method="post">
+    <form method="post" action="Secured" enctype="multipart/form-data" >
         <h1>Admin</h1>
         <p><i class="icon-paw"></i>SKLEP</p>
         <label for="title">Tytuł:</label>
@@ -39,7 +41,7 @@
         <label for="description">Opis:</label>
         <textarea name="description" id="description" cols="30" rows="10"></textarea>
 
-        <input name="attach1" type="file" />
+        <input asp-for="Attach1" name="Attach1" type="file" />
 
         <input type="submit" class="submit" value="Wyślij">
     </form>

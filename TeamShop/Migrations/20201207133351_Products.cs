@@ -1,10 +1,9 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 using MySql.Data.EntityFrameworkCore.Metadata;
 
 namespace TeamShop.Migrations
 {
-    public partial class AddFileName : Migration
+    public partial class Products : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -20,7 +19,7 @@ namespace TeamShop.Migrations
                     Tags = table.Column<string>(nullable: false),
                     Types = table.Column<string>(nullable: false),
                     Description = table.Column<string>(nullable: false),
-                    Attach1 = table.Column<byte[]>(nullable: false)
+                    PictureName = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
