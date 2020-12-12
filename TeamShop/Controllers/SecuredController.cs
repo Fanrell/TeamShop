@@ -12,7 +12,7 @@ using TeamShop.Models;
 
 namespace TeamShop.Controllers
 {
-    [Authorize]
+/*    [Authorize]*/
     public class SecuredController : Controller
     {
         private readonly ApplicationDbContext _db;
