@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Product>
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -15,41 +16,17 @@
 </section>
 
 <section id="products">
-    <a asp-area="" asp-controller="Home" asp-action="Catalog">
-        <div class="product">
-            <div class="img"></div>
-            <h3>NAZWA</h3>
-            <p>10 PLN</p>
-        </div>
-    </a>
-    <a asp-area="" asp-controller="Home" asp-action="Catalog">
-        <div class="product">
-            <div class="img"></div>
-            <h3>NAZWA</h3>
-            <p>10 PLN</p>
-        </div>
-    </a>
-    <a asp-area="" asp-controller="Home" asp-action="Catalog">
-        <div class="product">
-            <div class="img"></div>
-            <h3>NAZWA</h3>
-            <p>10 PLN</p>
-        </div>
-    </a>
-    <a asp-area="" asp-controller="Home" asp-action="Catalog">
-        <div class="product">
-            <div class="img"></div>
-            <h3>NAZWA</h3>
-            <p>10 PLN</p>
-        </div>
-    </a>
-    <a asp-area="" asp-controller="Home" asp-action="Catalog">
-        <div class="product">
-            <div class="img"></div>
-            <h3>NAZWA</h3>
-            <p>10 PLN</p>
-        </div>
-    </a>
+    @foreach (var item in Model)
+    {
+        <span hidden>@item.Id</span>
+        <a href="/Home/Catalog/@item.Id">
+            <div class="product">
+                <img src="~/img/@item.PictureName" class="img">
+                <h3>@item.Title</h3>
+                <p>@item.Price PLN</p>
+            </div>
+        </a>
+    }
 </section>
 <section id="cookie-warn">
     <div>

@@ -18,6 +18,7 @@ namespace TeamShop.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext _db;
         public IEnumerable<User> Users { get; set; }
+        public IEnumerable<Product> Products { get; set; }
 
         public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
         {
@@ -27,7 +28,8 @@ namespace TeamShop.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            Products = _db.Products.ToList();
+            return View(Products);
         }
 
         public IActionResult Basket()
@@ -35,9 +37,13 @@ namespace TeamShop.Controllers
             return View();
         }
 
-        public IActionResult Catalog()
+        public IActionResult Catalog(int? id)
         {
-            return View();
+            
+            Product product = _db.Products.FirstOrDefault(u => u.Id == id);
+            if (product == null)
+                return NotFound();
+            return View(product);
         }
 
         public IActionResult Account()
