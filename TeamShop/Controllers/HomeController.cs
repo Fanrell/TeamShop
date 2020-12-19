@@ -126,21 +126,22 @@ namespace TeamShop.Controllers
                 {
                     using (var mail = new System.Net.Mail.MailMessage())
                     {
-                        mail.From = new System.Net.Mail.MailAddress("cieslik.kamil@outlook.com");
+                        mail.From = new System.Net.Mail.MailAddress("teamshoplapa@outlook.com", "Sklep Zoologiczny Łapa");
                         mail.Subject = "test";
                         mail.Body = model.Message
                             +"\n========================\nImie i nazwisko: "+model.Name
                             +"\nEmail: "+model.Email+"\nPhone: "
                             +model.Phone
                             +"\nPreferowany sposób komunikacj: "+model.Preferowany;
-                        mail.To.Add("cieslik.kamil@outlook.com");
+                        mail.To.Add(mail.From.Address);
+                        mail.To.Add(model.Email);
 
                         using (var smtp = new System.Net.Mail.SmtpClient("smtp-mail.outlook.com", 587) )
                         {
                             smtp.EnableSsl = true;
                             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                             smtp.UseDefaultCredentials = false;
-                            smtp.Credentials = new NetworkCredential("cieslik.kamil@outlook.com", "igmu6JMFovd7T6");
+                            smtp.Credentials = new NetworkCredential("teamshoplapa@outlook.com", "nxvcZ8437XR4C9");
                             ServicePointManager.ServerCertificateValidationCallback =
                                 (sender, certificate, chain, sslPolicyErrors) => true;
 
