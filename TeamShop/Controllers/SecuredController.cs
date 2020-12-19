@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using TeamShop.Data;
 using TeamShop.Models;
 
@@ -17,12 +18,14 @@ namespace TeamShop.Controllers
     {
         private readonly ApplicationDbContext _db;
         private readonly IWebHostEnvironment webHostEnvironment;
+        private readonly ILogger _logger;
         public Product product { get; set; }
 
-        public SecuredController(ApplicationDbContext db, IWebHostEnvironment hostEnvironment)
+        public SecuredController(ApplicationDbContext db, IWebHostEnvironment hostEnvironment, ILogger<SecuredController> logger)
         {
             _db = db;
             webHostEnvironment = hostEnvironment;
+            _logger = logger;
         }
 
         public IActionResult Index()
@@ -33,7 +36,9 @@ namespace TeamShop.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(ProductView model)
         {
-                string uniqueFileName = UploadedFile(model);
+                (string,bool) uniqueFileName = UploadedFile(model);
+            if (uniqueFileName.Item2)
+            {
                 Product newProduct = new Product
                 {
                     Title = model.Title,
@@ -42,16 +47,23 @@ namespace TeamShop.Controllers
                     Tags = model.Tags,
                     Types = model.Types,
                     Description = model.Description,
-                    PictureName = uniqueFileName,
+                    PictureName = uniqueFileName.Item1,
                 };
-            _db.Add(newProduct);
-            await _db.SaveChangesAsync();
+                _db.Add(newProduct);
+                await _db.SaveChangesAsync();
+            }
+            else
+            {
+                _logger.LogError("Image filed was empty");
+            }
             return View();
         }
-        private string UploadedFile(ProductView model)
+        private (string,bool) UploadedFile(ProductView model)
         {
             string uniqueFileName = null;
-
+            bool flag = false;
+            if (model.Attach1 != null)
+            {
                 string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "img");
                 uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Attach1.FileName;
                 string filePath = Path.Combine(Path.Combine(uploadsFolder, uniqueFileName));
@@ -59,8 +71,10 @@ namespace TeamShop.Controllers
                 {
                     model.Attach1.CopyTo(fileStream);
                 }
+                flag = true;
+            }
 
-            return uniqueFileName;
+            return (uniqueFileName,flag);
         }
     }
 

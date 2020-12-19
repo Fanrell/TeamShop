@@ -1,4 +1,6 @@
-﻿@{
+﻿@model TeamShop.Models.EmailModel
+
+@{
     ViewData["Title"] = "Contact";
 }
 <section id="contact">
@@ -26,7 +28,7 @@
             <input type="radio" id="preferowany" name="preferowany" value="TELEFONICZNY" class="radio" checked>
             Telefoniczny
             <input type="radio" id="preferowany" name="preferowany" value="MAILOWY" class="radio">Mailowy
-            <input type="submit" id="submit" name="submit" value="WYŚLIJ">
+            <input type="submit" id="submit" name="submit" value="WYŚLIJ" asp-controller="Home" asp-action="SendEmail">
         </form>
     </div>
 </section>

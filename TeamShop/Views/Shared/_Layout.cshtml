@@ -10,13 +10,16 @@
     <link href="~/css/fontello-b4e01c75/css/fontello.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <header id="header">
-
-        <img src="" title="" alt="">
-        <h1><i class="icon-paw"></i>SKLEP</h1>
+    <a href="/">
+        <header id="header">
 
 
-    </header>
+            <img src="" title="" alt="">
+            <h1><i class="icon-paw"></i>SKLEP</h1>
+
+
+        </header>
+    </a>
     <navigation id="navigation" class="navbar-fixed-top ">
         <label for="drop" class="toggle">
             <i class="icon-menu"></i>
@@ -24,11 +27,11 @@
 
         <ul>
 
-            <li> <a  asp-area="" asp-controller="Home" asp-action="Index">KOTY</a></li>
-            <li> <a asp-area="" asp-controller="Home" asp-action="Index">PSY</a></li>
-            <li> <a asp-area="" asp-controller="Home" asp-action="Catalog">INNE</a></li>
+            <li> <a asp-route="showselected" asp-route-id="1">KOTY</a></li>
+            <li> <a asp-route="showselected" asp-route-id="0">PSY</a></li>
+            <li> <a asp-route="showselected" asp-route-id="2">INNE</a></li>
             <li> <a asp-area="" asp-controller="Home" asp-action="Contact">KONTAKT</a></li>
-            <li> <a asp-area="" asp-controller="Home" asp-action="Account">KONTO</a></li>
+            <li> <a asp-area="" asp-controller="Home" asp-action="Login">KONTO</a></li>
             <li><a class="basket" asp-area="" asp-controller="Home" asp-action="Basket">KOSZYK <i class="icon-shopping-basket"></i></a></li>
         </ul>
     </navigation>

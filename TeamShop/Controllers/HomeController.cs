@@ -10,6 +10,9 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using System.Security.Claims;
 using TeamShop.Data;
+using TeamShop.Tools;
+using System.Net.Mail;
+using System.Net;
 
 namespace TeamShop.Controllers
 {
@@ -25,10 +28,36 @@ namespace TeamShop.Controllers
             _logger = logger;
             _db = db;
         }
-
+        
         public IActionResult Index()
         {
             Products = _db.Products.ToList();
+            return View(Products);
+        }
+        [Route("Home/Index/{id:int}", Name = "showselected")]
+        public IActionResult Index(int? id) // do przerobienia na async
+
+        {
+            string tag = "";
+            List<Product> tagedProduct = new List<Product>();
+            switch (id)
+            {
+                case 0:
+                    tag = "psy";
+                    Products = Fill.FillProducts(_db.Products.ToList(), tag);
+                    break;
+                case 1:
+                    tag = "koty";
+                    Products = Fill.FillProducts(_db.Products.ToList(), tag);
+                    break;
+                case 2:
+                    tag = "inne";
+                    Products = Products = Fill.FillProducts(_db.Products.ToList(), tag);
+                    break;
+                default:
+                    Products = _db.Products.ToList();
+                    break;
+            }
             return View(Products);
         }
 
@@ -85,5 +114,47 @@ namespace TeamShop.Controllers
             }
             return View();
         }
+
+        [HttpPost]
+        public IActionResult SendEmail(EmailModel model)
+        {
+
+
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    using (var mail = new System.Net.Mail.MailMessage())
+                    {
+                        mail.From = new System.Net.Mail.MailAddress("cieslik.kamil@outlook.com");
+                        mail.Subject = "test";
+                        mail.Body = model.Message
+                            +"\n========================\nImie i nazwisko: "+model.Name
+                            +"\nEmail: "+model.Email+"\nPhone: "
+                            +model.Phone
+                            +"\nPreferowany sposób komunikacj: "+model.Preferowany;
+                        mail.To.Add("cieslik.kamil@outlook.com");
+
+                        using (var smtp = new System.Net.Mail.SmtpClient("smtp-mail.outlook.com", 587) )
+                        {
+                            smtp.EnableSsl = true;
+                            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                            smtp.UseDefaultCredentials = false;
+                            smtp.Credentials = new NetworkCredential("cieslik.kamil@outlook.com", "igmu6JMFovd7T6");
+                            ServicePointManager.ServerCertificateValidationCallback =
+                                (sender, certificate, chain, sslPolicyErrors) => true;
+
+                            smtp.Send(mail);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.ToString());
+            }
+            return RedirectToAction("Contact");
+        }
+        
     }
 }
