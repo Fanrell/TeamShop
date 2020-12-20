@@ -13,6 +13,7 @@ using TeamShop.Data;
 using TeamShop.Tools;
 using System.Net.Mail;
 using System.Net;
+using System.Web;
 
 namespace TeamShop.Controllers
 {
@@ -152,6 +153,12 @@ namespace TeamShop.Controllers
                 Debug.WriteLine(e.ToString());
             }
             return RedirectToAction("Contact");
+        }
+
+        [HttpPost]
+        public IActionResult AddToBracket(Product product)
+        {
+            return View("Index");
         }
         
     }
