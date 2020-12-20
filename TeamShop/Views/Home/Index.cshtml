@@ -5,13 +5,13 @@
 
 <section id="second-nav">
     <ul>
-        <li><a asp-area="" asp-controller="Home" asp-action="Catalog" onclick="">Karmy suche</a></li>
-        <li><a asp-area="" asp-controller="Home" asp-action="Catalog" onclick="">Karmy mokre</a></li>
-        <li><a asp-area="" asp-controller="Home" asp-action="Catalog" onclick="">Żwirki</a></li>
-        <li><a asp-area="" asp-controller="Home" asp-action="Catalog" onclick="">Kuwety</a></li>
-        <li><a asp-area="" asp-controller="Home" asp-action="Catalog" onclick="">Drapaki</a></li>
-        <li><a asp-area="" asp-controller="Home" asp-action="Catalog" onclick="">Zabawki</a></li>
-        <li><a asp-area="" asp-controller="Home" asp-action="Catalog" onclick="">Akcesoria</a></li>
+        @if (Context.Request.Path.Value.Split("/").Count() >= 4)
+        {
+        <li><a href="/Home/Index/@Context.Request.Path.Value.Split("/")[3]/0">Karmy</a></li>
+        <li><a href="/Home/Index/@Context.Request.Path.Value.Split("/")[3]/1">Zabawki</a></li>
+        <li><a href="/Home/Index/@Context.Request.Path.Value.Split("/")[3]/2"> Akcesoria</a></li>
+        <li><a href="/Home/Index/@Context.Request.Path.Value.Split("/")[3]/3">Inne</a></li>
+        }
     </ul>
 </section>
 

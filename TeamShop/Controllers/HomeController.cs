@@ -31,35 +31,32 @@ namespace TeamShop.Controllers
         
         public IActionResult Index()
         {
+            if(_db.Products == null)
+            {
+                return View();
+            }
             Products = _db.Products.ToList();
             return View(Products);
         }
-        [Route("Home/Index/{id:int}", Name = "showselected")]
+        [Route("Home/Index/{id:int}", Name = "showselected",Order = 1)]
         public IActionResult Index(int? id) // do przerobienia na async
 
         {
-            string tag = "";
-            List<Product> tagedProduct = new List<Product>();
-            switch (id)
-            {
-                case 0:
-                    tag = "psy";
-                    Products = Fill.FillProducts(_db.Products.ToList(), tag);
-                    break;
-                case 1:
-                    tag = "koty";
-                    Products = Fill.FillProducts(_db.Products.ToList(), tag);
-                    break;
-                case 2:
-                    tag = "inne";
-                    Products = Products = Fill.FillProducts(_db.Products.ToList(), tag);
-                    break;
-                default:
-                    Products = _db.Products.ToList();
-                    break;
-            }
+            string[] tags = { "psy", "koty", "inne" };
+            Products = _db.Products.Where(p => p.Tags == tags[(int)id]);
             return View(Products);
         }
+        [HttpGet]
+        [Route("Home/Index/{id:int}/{id2:int}", Name = "showselectedfilter", Order = 2)]
+        public IActionResult Index(int? id, int? id2) // do przerobienia na async
+
+        {
+            string[] tags = { "psy", "koty", "inne" };
+            string[] categories = { "Karmy", "Zabawki", "Akcesoria", "Inne" };
+            Products = _db.Products.Where(p => p.Tags == tags[(int)id] && p.Types == categories[(int)id2]);
+            return View(Products);
+        }
+
 
         public IActionResult Basket()
         {
