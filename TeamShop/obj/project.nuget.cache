@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mVlzW3+wafT/+ETzeqaVSj4Qk5Zo8cEegxkdYg0cXICHGmUsmh+pyjOWUQPK9LyE4xmGT5HUtjwXq+Jp/eVJww==",
+  "dgSpecHash": "n3aoqGT0s4i9Wl4k/l5c99YAA7BPf9V/rQoQTSf7k/WMvi22UL2Pb5/fW2A7wra8zNJe1jlW6Xg5xj2tDzigfg==",
   "success": true,
   "projectFilePath": "D:\\#Projekty\\#Project\\TeamShop\\TeamShop\\TeamShop.csproj",
   "expectedPackageFiles": [
@@ -142,7 +142,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Pakiet „MySql.Data.Entity 6.10.9” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8” zamiast platformy docelowej projektu „.NETCoreApp,Version=v3.1”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
+      "message": "Package 'MySql.Data.Entity 6.10.9' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
       "libraryId": "MySql.Data.Entity",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.1"
