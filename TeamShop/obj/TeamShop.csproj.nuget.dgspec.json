@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\#Projekty\\#Project\\TeamShop\\TeamShop\\TeamShop.csproj": {}
+    "D:\\Projekty git\\TeamShop\\TeamShop\\TeamShop.csproj": {}
   },
   "projects": {
-    "D:\\#Projekty\\#Project\\TeamShop\\TeamShop\\TeamShop.csproj": {
+    "D:\\Projekty git\\TeamShop\\TeamShop\\TeamShop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\#Projekty\\#Project\\TeamShop\\TeamShop\\TeamShop.csproj",
+        "projectUniqueName": "D:\\Projekty git\\TeamShop\\TeamShop\\TeamShop.csproj",
         "projectName": "TeamShop",
-        "projectPath": "D:\\#Projekty\\#Project\\TeamShop\\TeamShop\\TeamShop.csproj",
-        "packagesPath": "C:\\Users\\ciesl\\.nuget\\packages\\",
-        "outputPath": "D:\\#Projekty\\#Project\\TeamShop\\TeamShop\\obj\\",
+        "projectPath": "D:\\Projekty git\\TeamShop\\TeamShop\\TeamShop.csproj",
+        "packagesPath": "C:\\Users\\Kuba\\.nuget\\packages\\",
+        "outputPath": "D:\\Projekty git\\TeamShop\\TeamShop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\ciesl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Kuba\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -30,7 +30,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -42,7 +41,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Http": {
               "target": "Package",
@@ -84,6 +82,10 @@
               "target": "Package",
               "version": "[3.1.10, )"
             },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.22, )"
@@ -119,7 +121,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

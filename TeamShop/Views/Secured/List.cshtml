@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Product>
+
+    <section id="table">
+        <table class="list" metod ="post">
+            <tbody>
+                <tr>
+                    <th>Nazwa</th>
+                    <th>Kategorie</th>
+                    <th>Cena</th>
+                    <th>Ilość</th>
+
+                </tr>
+                @foreach(var item in Model)
+                {<tr>
+                    <span hidden>@item.Id</span>
+                    <td>@item.Title</td>
+                    <td>@item.Tags</td>
+                    <td>@item.Price</td>
+                    <td>@item.Quantity</td>
+                    <td>
+                        @using (Html.BeginForm("Delete", "SecuredController", FormMethod.Post, new { @class = "delete-form" }))
+                        {
+                        <input type="submit" formaction="/Secured/Delete/@item.Id" value="Delete">
+                        }
+                        </td>
+                </tr>}
+            </tbody>
+        </table>
+    </section>
