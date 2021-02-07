@@ -19,6 +19,8 @@ namespace TeamShop.Controllers
         private readonly ApplicationDbContext _db;
         private readonly IWebHostEnvironment webHostEnvironment;
         private readonly ILogger _logger;
+        public IEnumerable<Product> Products { get; set; }
+        [BindProperty]
         public Product product { get; set; }
 
         public SecuredController(ApplicationDbContext db, IWebHostEnvironment hostEnvironment, ILogger<SecuredController> logger)
@@ -31,6 +33,15 @@ namespace TeamShop.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+        public IActionResult List()
+        {
+            if (_db.Products == null)
+            {
+                return View();
+            }
+            Products = _db.Products.ToList();
+            return View(Products);
         }
 
         [HttpPost]
@@ -75,6 +86,28 @@ namespace TeamShop.Controllers
             }
 
             return (uniqueFileName,flag);
+        }
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Product product = _db.Products.Find(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            return View(product);
+        }
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Product product = _db.Products.Find(id);
+            _db.Products.Remove(product);
+            _db.SaveChanges();
+            return RedirectToAction("List");
         }
     }
 
