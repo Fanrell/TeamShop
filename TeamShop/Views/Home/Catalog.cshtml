@@ -14,9 +14,10 @@
         <h2>@Model.Title</h2>
         <p>@Model.Description</p>
         <p><label for="price">Cena: @Model.Price PLN</label></p>
-        <label for="quantity">Ilość:</label>
-        <input id="quantity" type="number" name="quantity" min="1" max="@Model.Quantity" step="1" value="1">
-        <button class="">Dodaj do koszyka</button>
+        @using (Html.BeginForm("AddToCart", "HomeController", FormMethod.Post, new { @class = "AddToCart-form" }))
+        {
+            <input type="submit" formaction="/Home/AddToCart/@Model.Id" value="Kup">
+        }
     </div>
 
 </section>

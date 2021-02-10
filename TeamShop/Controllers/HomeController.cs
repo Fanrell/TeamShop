@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -14,6 +15,8 @@ using TeamShop.Tools;
 using System.Net.Mail;
 using System.Net;
 using System.Web;
+using Microsoft.AspNetCore.Http;
+using System.Text.Json;
 
 namespace TeamShop.Controllers
 {
@@ -21,8 +24,11 @@ namespace TeamShop.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext _db;
+        /*private readonly IHttpContextAccessor _httpContextAccessor;*/
         public IEnumerable<User> Users { get; set; }
         public IEnumerable<Product> Products { get; set; }
+        public string ShopingCartId { get; set; }
+        public const string CartSessionKey = "CartID"; 
 
         public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
         {
@@ -61,7 +67,14 @@ namespace TeamShop.Controllers
 
         public IActionResult Basket()
         {
-            return View();
+            List<Product> productsList = new List<Product>();
+            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("cart")))
+            {
+                var fromSession = HttpContext.Session.GetString("cart");
+                productsList = JsonSerializer.Deserialize<List<Product>>(fromSession);
+            }
+            Products = productsList;
+            return View(Products);
         }
 
         public IActionResult Catalog(int? id)
@@ -92,6 +105,38 @@ namespace TeamShop.Controllers
         {
             return View();
         }
+        [HttpPost, ActionName("AddToCart")]
+        public IActionResult AddToCart(int id)
+        {
+            List<Product> listProducts = new List<Product>();
+            Product product = _db.Products.FirstOrDefault(i => i.Id == id);
+            if(string.IsNullOrEmpty(HttpContext.Session.GetString("cart")))
+            {
+                HttpContext.Session.SetString("cart", JsonSerializer.Serialize(listProducts));
+            }
+            var fromSession = HttpContext.Session.GetString("cart");
+            listProducts = JsonSerializer.Deserialize<List<Product>>(fromSession);
+            listProducts.Add(product);
+            HttpContext.Session.SetString("cart", JsonSerializer.Serialize(listProducts));
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost, ActionName("DeleteFromCart")]
+        public IActionResult DeleteFromCart(int id)
+        {
+            List<Product> listProducts = new List<Product>();
+            Product product = _db.Products.FirstOrDefault(i => i.Id == id);
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("cart")))
+            {
+                HttpContext.Session.SetString("cart", JsonSerializer.Serialize(listProducts));
+            }
+            var fromSession = HttpContext.Session.GetString("cart");
+            listProducts = JsonSerializer.Deserialize<List<Product>>(fromSession);
+            ListRemove.Remove(ref listProducts, id);
+            HttpContext.Session.SetString("cart", JsonSerializer.Serialize(listProducts));
+            return RedirectToAction("Basket");
+        }
+
         [HttpPost]
         public async Task<IActionResult> Login(string username, string password, string ReturnUrl)
         {

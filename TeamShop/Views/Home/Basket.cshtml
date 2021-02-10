@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Product>
+@{
     ViewData["Title"] = "Basket";
 }
 
@@ -7,28 +8,20 @@
         <tbody>
             <tr>
                 <th>Nazwa</th>
-                <th>Ilość sztuk</th>
                 <th>Cena</th>
 
             </tr>
-            <tr>
-                <td>Karma</td>
-                <td><input id="quantity" type="number" name="quantity" min="1" max="5" step="1" value="1"></td>
-                <td>10 PLN</td>
-                <td><a href="file:///C:/Users/Fanrell/AppData/Local/Temp/basket.html#"> <i class="icon-trash-empty"></i></a></td>
+            @foreach (var item in Model)
+            {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Price</td>
+            @using (Html.BeginForm("DeleteFromCart", "HomeController", FormMethod.Post, new { @class = "DeleteFromCart-form" }))
+            {
+                <td><input type="submit" formaction="/Home/DeleteFromCart/@item.Id" value="Usuń"></td>
+            }
             </tr>
-            <tr>
-                <td>Karma</td>
-                <td><input id="quantity" type="number" name="quantity" min="1" max="5" step="1" value="1"></td>
-                <td>10 PLN</td>
-                <td><a href="file:///C:/Users/Fanrell/AppData/Local/Temp/basket.html#"> <i class="icon-trash-empty"></i></a></td>
-            </tr>
-            <tr>
-                <td>Karma</td>
-                <td><input id="quantity" type="number" name="quantity" min="1" max="5" step="1" value="1"></td>
-                <td>10 PLN</td>
-                <td><a href="file:///C:/Users/Fanrell/AppData/Local/Temp/basket.html#"> <i class="icon-trash-empty"></i></a></td>
-            </tr>
+            }
         </tbody>
     </table>
     <div>
@@ -36,19 +29,14 @@
             <tbody>
                 <tr>
                     <th>Cena produktów:</th>
-                    <td>5 PLN</td>
+                    <td>@Model.Sum(s => s.Price) PLN </td>
                 </tr>
                 <tr>
                     <th>Cena dostawy:</th>
                     <td>5 PLN</td>
                 </tr>
-                <tr>
-                    <th>Suma:</th>
-                    <th>35 PLN</th>
-                </tr>
             </tbody>
         </table>
-        <button>Zamawiam i płacę</button>
     </div>
 
 </section>
